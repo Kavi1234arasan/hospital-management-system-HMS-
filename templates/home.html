@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center">
+    <h1>🏥 Welcome to Hospital Management System</h1>
+    <p class="lead">Manage patients, doctors, appointments, and billing easily.</p>
+    {% if user.is_authenticated %}
+        <a href="{% url 'dashboard' %}" class="btn btn-primary">Go to Dashboard</a>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn btn-success">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-info">Register</a>
+    {% endif %}
+</div>
+{% endblock %}
